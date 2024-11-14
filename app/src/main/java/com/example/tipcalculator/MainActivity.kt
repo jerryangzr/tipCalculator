@@ -94,7 +94,6 @@ fun TopHeader(totalPerPerson: Double = 0.0) {
             Text("Total Per person", fontWeight = FontWeight.Bold, fontSize = 16.sp,
                 style = MaterialTheme.typography.headlineMedium)
             Text("$$total", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-
         }
     }
 }
@@ -133,8 +132,14 @@ fun MainContent() {
         tipPercentage = tipPercentage,
         sliderPosition = sliderPosition
     ) { updatedBill ->
+
+        tipAmount.doubleValue =
+            if (updatedBill.isEmpty()) 0.0
+            else calculateTotalTip(updatedBill.toDouble(), tipPercentage = tipPercentage)
+
         totalPerPerson.doubleValue =
-            calculateTotalPerPerson(updatedBill.toDouble(), splitBy.intValue, tipPercentage)
+            if (updatedBill.isEmpty()) 0.0
+            else calculateTotalPerPerson(updatedBill.toDouble(), splitBy.intValue, tipPercentage)
     }
 }
 
@@ -249,10 +254,6 @@ fun BillForm(
                                 splitBy = splitBy.value,
                                 tipPercentage = (newValue * 100.0).toInt()
                             )
-                        },
-                        onValueChangeFinished = {
-                            Log.d("Finished", "BillForm: $tipPercentage")
-                            //This is were the calculations should happen!
                         },
                         steps = 5
                     )

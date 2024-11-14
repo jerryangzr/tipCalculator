@@ -33,7 +33,7 @@ fun InputField(
     isSingleLine: Boolean,
     keyboardType: KeyboardType = KeyboardType.Number,
     onValueChangeAction: (String) -> Unit = {},
-    imeAction: ImeAction = ImeAction.Send,
+    imeAction: ImeAction = ImeAction.Done,
     onAction: KeyboardActions = KeyboardActions.Default
 ) {
 
@@ -52,7 +52,10 @@ fun InputField(
         },
         trailingIcon = {
             if (valueState.value.isNotBlank()) {
-                IconButton(onClick = { valueState.value = "" }) {
+                IconButton(onClick = {
+                    valueState.value = ""
+                    onValueChangeAction.invoke("")
+                }) {
                     Icon(
                         Icons.Default.Clear,
                         contentDescription = "Clear Bill"

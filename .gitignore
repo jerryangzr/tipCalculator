@@ -9,4 +9,3 @@
 *.lock
 *.properties
 /.gradle
-/.gradle
