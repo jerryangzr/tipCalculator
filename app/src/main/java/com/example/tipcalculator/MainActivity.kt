@@ -83,7 +83,7 @@ fun TopHeader(totalPerPerson: Double = 0.0) {
             .padding(15.dp)
 //            .clip(shape = RoundedCornerShape(corner = CornerSize(12.dp)))
             .clip(shape = CircleShape.copy(all = CornerSize(12.dp))),
-        color = Color(0xFFE9D7F7)
+        color = Color(0xFF62E6FF)
     ) {
         Column(
             verticalArrangement = Arrangement.Center,

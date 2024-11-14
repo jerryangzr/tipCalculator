@@ -1,8 +1,8 @@
 /build
 # Gradle files
-.gradle/
+.gradle/*
 
 *.iml
-.idea/
+.idea/*
 
 .DS_Store
