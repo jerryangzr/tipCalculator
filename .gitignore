@@ -1,8 +1,12 @@
 /build
 # Gradle files
-.gradle/*
+.gradle/
 
 *.iml
-.idea/*
+.idea/
 
 .DS_Store
+*.lock
+*.properties
+/.gradle
+/.gradle
