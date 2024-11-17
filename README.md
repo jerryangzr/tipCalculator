@@ -1,4 +1,4 @@
-This is a Jetpack-Compose-based tipping calculator where users can input the number of people to split the bill and customise the percentage of the bill to tip. 
+This is a **Jetpack-Compose-based** tipping calculator where users can input the number of people to split the bill and customise the percentage of the bill to tip. 
 
 ### App Snapshot
 
